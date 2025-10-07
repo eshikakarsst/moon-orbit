@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rotating Circle Animation</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+    }
+
+    .sun {
+      width: 150px;
+      height: 150px;
+      background-color: blue;
+      border-radius: 50%;
+      position: relative;
+      box-shadow: 0 0 20px blue;
+    }
+
+    .orbit {
+      width: 400px; /* increased orbit distance */
+      height: 400px; /* increased orbit distance */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      animation: rotate 5s linear infinite;
+    }
+
+    .earth {
+      width: 50px;
+      height: 50px;
+      background-color: cyan;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 15px cyan, 0 0 30px cyan, 0 0 45px cyan;
+    }
+
+    @keyframes rotate {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sun">
+    <div class="orbit">
+      <div class="earth"></div>
+    </div>
+  </div>
+
+</body>
+</html>
